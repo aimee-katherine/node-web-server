@@ -38,6 +38,12 @@ app.use((req, res, next)=>{
 //to register middleware (takes one argument)
 app.use(express.static(__dirname+'/public'));
 
+app.get('/projects', (req, res)=>{
+  res.render('projects.hbs', {
+    pageTitle: 'Aimee Katherine\'s Projects'
+  });
+});
+
 app.get('/', (req, res)=>{
   //res.send('<h1>Hello Express</h1>');
   res.render('home.hbs', {
